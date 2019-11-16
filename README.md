@@ -7,7 +7,7 @@
 
 ```
 # /etc/php/7.0/fpm/php.ini
-upload_max_filesize = 100M
+upload_max_filesize = 10M
 post_max_size = 10M
 ```
 

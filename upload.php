@@ -14,15 +14,15 @@ if (
     !in_array($file_extension, $allowed_types) ||
     in_array(mime_content_type($_FILES['file']['tmp_name']), $mime_type_black_list)
 ) {
-    echo "Possible file upload attack!";
+    echo json_encode(array('status' => 'error', 'msg' => 'Possible file upload attack!'));
 } else if ($_FILES['file']['size'] > $size_limit) {
-    echo "The file is too large.";
+    echo json_encode(array('status' => 'error', 'msg' => 'The file is too large.'));
 } else {
     date_default_timezone_set('Asia/Shanghai');
     $file_path = 'upload/' . date("YmdHis") . strval(rand(100000, 999999)) . '.' . $file_extension;
     if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path)) {
-        echo $_SERVER['HTTP_REFERER'] . $file_path;
+        echo json_encode(array('status' => 'ok', 'msg' => $_SERVER['HTTP_REFERER'] . $file_path));
     } else {
-        echo "Unknown error. Upload failed.";
+        echo json_encode(array('status' => 'error', 'msg' => 'Unknown error.'));
     }
 }
