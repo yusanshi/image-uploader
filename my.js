@@ -3,7 +3,7 @@ $(function () {
     url: 'upload.php',
     maxFileSize: 10000000, // 10 Megs 
     allowedTypes: 'image/*',
-    extFilter: ["jpg", "jpeg", "bmp", "png", "gif", "tiff"],
+    extFilter: ["jpg", "jpeg", "bmp", "png", "gif", "tiff", "svg"],
     onDragEnter: function () {
       // Happens when dragging something over the DnD area
       this.addClass('active');
@@ -39,6 +39,7 @@ $(function () {
       // A file was successfully uploaded
       ui_multi_update_file_status(id, 'success', 'Upload Complete');
       ui_multi_update_file_progress(id, 100, 'success', false);
+      copy_to_clipboard(data);
     },
     onUploadError: function (id, xhr, status, message) {
       ui_multi_update_file_status(id, 'danger', message);
@@ -104,4 +105,9 @@ function ui_multi_update_file_controls(id, start, cancel, wasError) {
   if (wasError) {
     $('#uploaderFile' + id).find('button.start').html('Retry');
   }
+}
+
+
+function copy_to_clipboard(text) {
+
 }
