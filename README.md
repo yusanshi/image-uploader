@@ -2,7 +2,7 @@
 
 https://img.yusanshi.com/
 
-A simple image hosting service (图床). Drap, paste or browser images files, then get Mardown tags for them.
+A simple image hosting service (图床). Drap, paste or browser images files, then get Markdown tags for them.
 
 Based on [uploader](https://github.com/danielm/uploader). I added support for pasting image from clipboard. See my [Pull Request](https://github.com/danielm/uploader/pull/107).
 
