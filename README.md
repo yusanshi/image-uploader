@@ -8,7 +8,7 @@ Based on [uploader](https://github.com/danielm/uploader). I added support for pa
 
 Not finish yet. (Beautifying UI, adding support for manually copying ...)
 
-![](https://img.yusanshi.com/upload/20191116222555855402.png)
+![](https://img.yusanshi.com/upload/20191118013332701015.png)
 
 With this, when writing Markdown, I use `Windows + Shift + S` to take a screenshot, `Ctrl + V` in the site, wait for it to finish uploading and automatically copy into my clipboard, then `Ctrl + V` again in my Markdown editor.
 
