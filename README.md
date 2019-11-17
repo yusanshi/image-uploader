@@ -10,7 +10,7 @@ Not finish yet. (Beautifying UI, adding support for manually copying ...)
 
 ![](https://img.yusanshi.com/upload/20191116222555855402.png)
 
-With this, when writing Markdown, I use `Windows + Shift + S` to take a screenshot, `Ctrl + V` in the site, wait for it to finishing uploading and automatically copying into my clipboard, then `Ctrl + V` again in my Markdown editor.
+With this, when writing Markdown, I use `Windows + Shift + S` to take a screenshot, `Ctrl + V` in the site, wait for it to finish uploading and automatically copy into my clipboard, then `Ctrl + V` again in my Markdown editor.
 
 ## Miscellaneous
 
