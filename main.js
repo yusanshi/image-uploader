@@ -40,7 +40,11 @@ $(function () {
       if (response.status == 'ok') {
         uiMultiUpdateFileStatus(id, 'success', 'Upload Complete');
         uiMultiUpdateFileProgress(id, 100, 'success', false);
-        copyTextToClipboard(toMarkdownTag(response.msg));
+        $('#uploaderFile' + id).prop('markdown-tag', toMarkdownTag(response.msg));
+        copyMarkDownTag(id);
+        $('#uploaderFile' + id).on('click', function () {
+          copyMarkDownTag(id);
+        });
       } else {
         uiMultiUpdateFileStatus(id, 'danger', response.msg);
         uiMultiUpdateFileProgress(id, 0, 'danger', false);
@@ -61,6 +65,7 @@ function uiMultiAddFile(id, file) {
 
   template = $(template);
   template.prop('id', 'uploaderFile' + id);
+  template.prop('markdown-tag', '');
   template.data('file-id', id);
 
   $('#files').find('li.empty').fadeOut(); // remove the 'no files yet'
@@ -101,6 +106,10 @@ function toMarkdownTag(url) {
 
 function toHTMLTag(url) {
   return '<img src="' + url + '">';
+}
+
+function copyMarkDownTag(id) {
+  copyTextToClipboard($('#uploaderFile' + id).prop('markdown-tag'));
 }
 
 // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
